@@ -37,7 +37,7 @@ func (g *Graph) AddEdge(ori Node, dest Node, weight int) {
 func (g *Graph) ShortestPath(ori Node, dest Node) ([]Node, error) {
 	trace := make(map[Node]*Trace)
 	for v := range g.adj {
-		trace[v] = &Trace{int(math.Inf(1)), nil}
+		trace[v] = &Trace{math.MaxInt, nil}
 	}
 	trace[ori] = &Trace{0, nil}
 
